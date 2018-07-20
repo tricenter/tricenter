@@ -1,0 +1,422 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@media (min-width: 200px) {
+
+ #logo{
+ 	min-width: 150px;
+ }
+
+table {
+  border-collapse: collapse;
+}
+
+
+	.scroll-content{
+
+		padding-left:0;
+		padding-top:0;
+		padding-right:0;
+		padding-bottom:0;
+		margin-top:94px;
+		margin-bottom:50px;
+		margin-left:0px;
+		margin-right:6px;
+		background-color:#222;
+
+	}
+.alertCustomCss {
+    // text color for basic alerts
+    color: white; 
+
+    // alert modal page bg color. Warning this will remove the alert transparency
+    //background-color: color($colors, dark, base); 
+
+    button {
+        color: white !important; // button text color
+        background-color: #F96935 !important;
+            //button bg color
+    }
+
+    .alert-message {
+        color: white; // text color for confirm alerts
+    }
+
+    .alert-wrapper {
+        background-color: color($colors, dark, base); // bg color of alert content
+    }
+  }
+
+  .titulo {
+		padding:0;
+		margin-top:0;
+		margin-bottom:0;
+
+	    background-color : $appcolorfondo;
+	    color : #ffffff !important;
+	}
+
+	h2,h1,h3,h5,h4 {
+		color:#ffffff;
+	}
+
+	.p{
+		color:#ffffff;
+	}
+
+	.buscar{
+		padding-left:0px;
+		padding-top:0;
+		padding-right:0px;
+		padding-bottom:0;
+		margin-top:0;
+		margin-bottom:0;
+		margin-left:6px;
+		margin-right:0;
+		background-color:#ffffff;
+		font-size:16px;
+	    height:32px;
+	    width:120px;
+	}
+
+	.fontnormalblanca{
+	  	padding:0;
+		margin-top:0px;
+		margin-bottom:0;
+		color:#fff;
+		font-size:0.85em;
+		background-color:#000000;
+	}
+
+	.fontnormal{
+		font-size:0.85em;
+	}
+
+	.fontgrande{
+		font-size:1.20em;
+	}
+
+	.fontmuygrande{
+		font-size:1.80em;
+	}
+	.fontboton{
+		font-size:0.75em;
+	}
+
+	.sinmargencabecera {
+		padding-left:0px;
+		padding-top:5px;
+		padding-right:3px;
+		padding-bottom:2px;
+		margin-top:0;
+		margin-bottom:0;
+		margin-left:0px;
+		margin-right:0;
+	}
+
+	.sinmargen {
+		padding-left:5px;
+		padding-top:0;
+		padding-right:5px;
+		padding-bottom:0;
+		margin-top:0;
+		margin-bottom:3px;
+		margin-left:1px;
+		margin-right:0;
+		background: #111;
+	}
+
+	.sinmargen2 {
+		padding-left:5px;
+		padding-top:0;
+		padding-right:5px;
+		padding-bottom:0;
+		margin-top:0;
+		margin-bottom:3px;
+		margin-left:10px;
+		margin-right:0;
+
+	}
+
+	.sinmargenlist {
+		padding-left:0;
+		padding-top:0;
+		padding-right:0;
+		padding-bottom:0;
+		margin-top:0;
+		margin-bottom:0;
+		margin-left:0;
+		margin-right:0;
+
+	}
+
+	.formulario{
+
+		height: 30px;
+		color:#fff;
+		font-size:1em;
+		background-color:#000;
+		}
+
+	.sinmargenpri {
+		padding-left:5px;
+		padding-top:0;
+		padding-right:5px;
+		padding-bottom:0;
+		margin-top:0;
+		margin-bottom:0;
+		margin-left:10px;
+		margin-right:0;
+	}
+	.sinmargenult {
+		padding-left:5px;
+		padding-top:0;
+		padding-right:5px;
+		padding-bottom:0;
+		margin-top:0;
+		margin-bottom:0;
+		margin-left:1px;
+		margin-right:0;
+	}
+
+	.for_width{
+		max-width: 380px;
+	}
+
+	.fondoblanco {
+	  background-color: #ffffff;
+
+	}
+
+
+	.fondoazultricenter {
+	  background-color: #3367cc;
+	}
+
+	.sinmargenimg {
+	    top: -2px;
+	}
+
+	.fondooferta {
+	  color:#ffffff;
+	  background-color: #FF4000;
+
+	}
+	.textoblanco {
+		color:#ffffff;
+	}
+
+	.menuToggle {
+		color:#ffffff;
+	}
+
+	.ion-button {
+		color:#ffffff;
+	}
+
+	.textoicono	{
+		padding:0;
+		margin-top:5px;
+		margin-bottom:0;
+		color:#999;
+		 font-size: 8px;
+	}
+
+	.textonav {
+		padding:0;
+		margin-top:9px;
+		margin-left:9px;
+		margin-bottom:9px;
+		color:#999;
+		 font-size: 9px;
+	}
+
+
+div#usu {
+	padding:0;
+	margin-left:9px;
+	height:40px;
+
+}
+
+
+img.icon-5{
+	margin-top:-5px;
+	width: 45px;
+	height: 45px;
+	min-width: 45px;
+	min-height: 45px;
+	cursor: pointer;
+	align-content: right;
+}
+
+	.toolbar-background {
+	  background-color: $appcolorfondo;
+	}
+
+	#buscargrande {
+	  	visibility: hidden;
+	  	height:1px;
+	  	width:1px;
+	}
+
+	#caba {
+	  	
+	}
+
+	#cabb {
+	  	
+	}
+	#cabc{
+		width:0;
+	  	visibility: hidden;
+	  	
+	}
+
+	#cabcc {
+		width:0;
+	  	visibility: hidden;
+	  	
+	}
+	#cabd {
+	  	visibility: visible;
+	}
+
+
+/*
+	.unidadescesta2cifras{
+		position: absolute; 
+  	right: 16px; 
+  	top: -10px; 
+  	width: 0px; 
+  	height: 0px; 
+		font-weight: bold;
+		font-size:0.4em;
+		color:#FF4000;
+		text-align: center;
+		background-color: #fff;
+	}
+*/
+
+	.cestacarrito{
+		position: absolute; 
+  	right: 5px; 
+  	top: -15px; 
+  	z-index: 1;
+	  padding:0;
+		margin-top:0px;
+		margin-bottom:0;
+		color:#fff;
+		font-size:2em;
+		background-color:#000000;
+	}
+		.unidadescesta{
+		position: absolute; 
+  	right: 17px; 
+  	top: -5px; 
+  	z-index: 2;
+  	width: 0px; 
+  	height: 0px; 
+		font-weight: bold;
+		font-size:0.35em;
+		color:#FF4000;
+		text-align: center;
+		background-color: #fff;
+	}
+
+
+.cestacarrito2{
+		position: absolute; 
+  	right: 9px; 
+  	top: 57px; 
+  	z-index: 1;
+	  padding:0;
+		margin-top:0px;
+		margin-bottom:0;
+		color:#fff;
+		font-size:2em;
+		background-color:#000000;
+	}
+
+
+}
+
+@media (min-width: 550px) {
+
+	#caba {
+	  	
+	}
+
+	#cabb {
+	  	
+	}
+	#cabc {
+		width:180;
+	  	visibility: visible;
+	  	
+	}
+
+	
+
+	#cabd {
+	  	
+	  	visibility: visible;
+	}
+
+	#botonbuscar {
+	  	visibility: hidden;
+	  	height:1px;
+	  	width:1px;
+	}
+
+	#buscargrande {
+		padding: 0px;
+		margin-right:0px;
+	  	visibility: hidden;
+	  	height:38px;
+	}
+
+.sinmargen {
+		padding-left:20px;
+		padding-top:5px;
+		padding-right:20px;
+		padding-bottom:5px;
+		margin-top:0px;
+		margin-bottom:0px;
+		margin-left:1px;
+		margin-right:0;
+		background: #222;
+		color:#fff;
+	}
+  
+.textoicono	{
+		padding:0;
+		margin-top:5px;
+		margin-bottom:0;
+		color:#fff;
+		font-size: 12px;
+	}
+
+.textoblanco {
+		color:#111;
+	}
+
+
+
+
+}	
+
+

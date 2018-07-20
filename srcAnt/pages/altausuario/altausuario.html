@@ -1,0 +1,93 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content><combuscar></combuscar>
+  	<div class="for_width">
+        <form [formGroup]="myForm" (ngSubmit)="registro()" novalidate>
+		  <ion-list> 
+
+		    <ion-item>
+		      <ion-label floating>Nombre o Razón Social:</ion-label>
+		      <ion-input formControlName="razsocial" type="text" ></ion-input>
+		    </ion-item>
+		    <ion-item *ngIf="myForm.get('razsocial').errors && myForm.get('razsocial').dirty">
+		    	<p color="danger" ion-text *ngIf="myForm.get('razsocial').hasError('required')">Campo obligatorio</p>
+		    </ion-item>
+
+		    <ion-item>
+		      <ion-label floating>Nif / Cif:</ion-label>
+		      <ion-input formControlName="nif" type="nif" ></ion-input>
+		    </ion-item>
+		    <ion-item *ngIf="myForm.get('nif').errors && myForm.get('nif').dirty">
+		      <p color="danger" ion-text *ngIf="myForm.get('nif').hasError('pattern')">Escriba un CIF / NIF válido</p>
+		    </ion-item>
+
+		    <ion-item>
+		      <ion-label floating>E-mail:</ion-label>
+		      <ion-input formControlName="email" type="text"  ></ion-input>
+		    </ion-item>
+		    <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+		      <p color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">Campo obligatorio</p>
+		      <p color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">Escriba un email válido</p>
+		    </ion-item>
+
+		    <ion-item>
+		      <ion-label floating>Contraseña:</ion-label>
+		      <ion-input formControlName="contrasena" type="password" ></ion-input>
+		    </ion-item>
+		    <ion-item *ngIf="myForm.get('contrasena').errors && myForm.get('contrasena').dirty">
+		      <p color="danger" ion-text *ngIf="myForm.get('contrasena').hasError('required')">Campo obligatorio</p>
+		      <p color="danger" ion-text *ngIf="myForm.get('contrasena').hasError('pattern')">Use entre 6 y 18 caracteres alfanumericos</p>
+		    </ion-item>
+
+	 		<ion-item>
+		      <ion-label floating>Teléfono:</ion-label>
+		      <ion-input formControlName="telefono" type="telefono" ></ion-input>
+		    </ion-item>
+		    <ion-item *ngIf="myForm.get('telefono').errors && myForm.get('telefono').dirty">
+		      <p color="danger" ion-text *ngIf="myForm.get('telefono').hasError('pattern')">Escriba un teléfono válido</p>
+		    </ion-item>
+
+		    <ion-item>
+		      <ion-label floating>Dirección:</ion-label>
+		      <ion-input formControlName="direccion" type="text" ></ion-input>
+		    </ion-item>
+		    <ion-item *ngIf="myForm.get('direccion').errors && myForm.get('direccion').dirty">
+		      <p color="danger" ion-text *ngIf="myForm.get('direccion').hasError('pattern')">Escriba una dirección válida</p>
+		    </ion-item>
+
+		     <ion-item>
+		      <ion-label floating>Código Postal:</ion-label>
+		      <ion-input formControlName="cpostal" type="text" ></ion-input>
+		    </ion-item>
+		    <ion-item *ngIf="myForm.get('cpostal').errors && myForm.get('cpostal').dirty">
+		      <p color="danger" ion-text *ngIf="myForm.get('cpostal').hasError('pattern')">Escriba un código postal válido</p>
+		    </ion-item>
+
+		    <ion-item>
+		      <ion-label floating>Población:</ion-label>
+		      <ion-input formControlName="poblacion" type="text" ></ion-input>
+		    </ion-item>
+
+		    <ion-item>
+		      <ion-label floating>Provincia:</ion-label>
+		      <ion-input formControlName="provincia" type="text" ></ion-input>
+		    </ion-item>
+
+	      <ion-item>
+				  <ion-label>Añadir dirección de entrega</ion-label>
+				  <ion-toggle (ionChange)="nuevadireccion = 'true'"></ion-toggle>
+				</ion-item>
+			<div *ngIf="nuevadireccion == 'true'" >
+				<ion-item >
+				  <ion-label floating>Dirección de entrega completa:</ion-label>
+				  <ion-input formControlName="direccionentrega" type="text"></ion-input>
+				</ion-item>
+			</div>
+		  </ion-list>
+		  <div padding>
+	    	<button class="formulario" ion-button block type="submit" [disabled]="!myForm.valid">Aceptar</button>
+		  </div>
+		</form>
+	</div>
+	</ion-content>
+<compie></compie>

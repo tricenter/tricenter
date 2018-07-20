@@ -1,0 +1,363 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content padding><combuscar></combuscar>
+
+
+ <div class = "row"  style="margin-left: 15px;  text-align: center">
+      <div style="width: 100%">
+		  <button style="background-color:#010101;height:30px;margin-right: 10px;border-radius: 10%;" ion-button block (click)="accion1()"><ion-icon style="font-size: 30px" name="podium"></ion-icon>&nbsp;Facturación </button>
+		  <ion-card  *ngIf="ocultar1">
+		   <ion-card-header>
+		     Datos para la factura             
+		   </ion-card-header>
+		   <ion-card-content>
+			   <form (ngSubmit)="iradatos()">
+			       <ion-list> 
+			          <ion-item> 
+			            <p>Razón Social: <b>{{this.variablesglobales.CLIENTES_RAZSOCIAL}}</b></p>
+			            <p>Cif/Nif: <b>{{this.variablesglobales.CLIENTES_NIF}}</b></p>
+			            <p>Dirección: <b>{{this.variablesglobales.CLIENTES_DIRECCION}}</b></p>
+			            <p>C. Postal: <b>{{this.variablesglobales.CLIENTES_CPOSTAL}}</b></p>
+			            <p>Población: <b>{{this.variablesglobales.CLIENTES_POBLACION}}</b></p>
+			            <p>Provincia: <b>{{this.variablesglobales.CLIENTES_PROVINCIA}}</b></p>
+			            <p>Pais: <b>España</b></p>
+			          </ion-item>
+			      	</ion-list>
+			      	<button class="formulario" ion-button block type="submit">Actualizar</button>
+			    </form>
+		   </ion-card-content>
+		</ion-card>
+      </div>
+      <div style="width: 100%">
+		<button style="background-color:#010101;height:30px;border-radius: 10%;"  ion-button block (click)="accion2()"><ion-icon style="font-size: 30px" name="home"></ion-icon>&nbsp;Dirección Entrega</button>
+      <ion-card *ngIf="ocultar2">
+		   <ion-card-header>
+		       Última dirección de entrega
+		   </ion-card-header>
+		   <ion-card-content>
+		  <form (ngSubmit)="iradatos()">
+			       <ion-list> 
+			          <ion-item> 
+			            <p>{{this.variablesglobales.CLIENTES_DIRECCION_ENTREGA}}</p>
+			          </ion-item>
+			      	</ion-list>
+			      	<button class="formulario" ion-button block type="submit">Actualizar</button>
+			    </form>
+		   </ion-card-content>
+		</ion-card>
+
+      </div>
+      <div style="width: 100%">
+      	<button style="background-color:#010101;height:30px;border-radius: 10%;"  ion-button block (click)="accion3()"><ion-icon style="font-size: 30px" name="jet"></ion-icon>&nbsp; Envío</button>
+      	<ion-card *ngIf="ocultar3">
+		   <ion-card-header>
+		     Metodo de envío
+           	<ion-item  style="background-color: #B9D4FF">
+		      <ion-label style="width: 100px">Elegir la forma:</ion-label>
+		      <ion-select (ionChange)="this.loaddata()" [(ngModel)]="rating" okText="Ok" cancelText="Cancelar">
+		        <ion-option value="1">Normal </ion-option>
+		        <ion-option value="2">Express</ion-option>
+		        <ion-option value="3">Tienda PISA</ion-option>
+		        <ion-option value="4">Tienda PIBO</ion-option>
+		        <ion-option value="5">Nuevo Bulevar</ion-option>
+		      </ion-select>
+		    </ion-item>
+		   </ion-card-header>
+		   <ion-card-content>
+		  <form (ngSubmit)="iradatos()">
+			       <ion-list> 
+			          <ion-item *ngIf="this.rating==1"> 
+			            <table>
+				          <tr>
+				            <td width="5%">&nbsp;</td>
+				            <td width="100%">
+				            	<p>Mensajería NORMAL</p>
+				            	<p>Tiene un cargo de <b>6€</b> en este pedido</p>
+				        		<p>Para pedidos superiores a 50€ el envío es gratis.</p>
+
+				            </td>
+				           </tr>
+				        </table>
+			          </ion-item>
+
+			          <ion-item *ngIf="this.rating==2"> 
+			            <table>
+				          <tr>
+				            <td width="5%">&nbsp;</td>
+				            <td width="100%">
+				            	<p>Mensajería EXPRESS</p>
+				            	<p>Tiene un cargo de <b>9€</b> en este pedido</p>
+				        		<p>Para pedidos superiores a 50€ el envío es gratis.</p>
+				            </td>
+				           </tr>
+				        </table>
+			          </ion-item>
+			          <ion-item *ngIf="this.rating==3"> 
+			            <table>
+				          <tr>
+				            <td width="2%">&nbsp;</td>
+				            <td width="50%">
+				             <table border="0" width="100%" height="100%">
+				             	 <tr>
+							      <td width="100%" height="30" align="center">
+							        <p>Recoger en la tienda del PISA<p>
+							      </td>
+							    </tr>
+							    <tr (click)="openPisa()">
+							      <td width="100%" height="100" align="center">
+							          <img src="http://www.tricenter.es/APP/tricenter/resources/FOTOS_CON_LETRAS/tienda_pisa.jpg" >
+							       </td>
+							    </tr>
+							  </table>
+				            </td>
+				            </tr>
+				           <tr>
+				            <td width="2%">&nbsp;</td>
+				            <td colspan="2" width="50%">
+								      <br>
+
+				            </td>
+				          </tr>
+				        </table>
+			          </ion-item>
+
+			            <ion-item *ngIf="this.rating==4"> 
+			            <table>
+				          <tr>
+				            <td width="2%">&nbsp;</td>
+				            <td width="50%">
+				             <table border="0" width="100%" height="100%">
+				             	 <tr>
+							      <td width="100%" height="30" align="center">
+							        <p>Recoger en la tienda del PIBO<p>
+							      </td>
+							    </tr>
+							    <tr (click)="openPibo()">
+							      <td width="100%" height="100" align="center">
+							          <img src="http://www.tricenter.es/APP/tricenter/resources/FOTOS_CON_LETRAS/tienda_pibo.jpg" >
+							       </td>
+							    </tr>
+							  </table>
+				            </td>
+				            </tr>
+				           <tr>
+				            <td width="2%">&nbsp;</td>
+				            <td colspan="2" width="50%">
+								            	<br>
+
+				            </td>
+				          </tr>
+				        </table>
+			          </ion-item>
+
+			            <ion-item *ngIf="this.rating==5"> 
+			            <table>
+				          <tr>
+				            <td width="2%">&nbsp;</td>
+				            <td width="50%">
+				             <table border="0" width="100%" height="100%">
+				             	 <tr>
+							      <td width="100%" height="30" align="center">
+							        <p>Recoger en la tienda del Nuevo Bulevar<p>
+							      </td>
+							    </tr>
+							    <tr (click)="openMairena()">
+							      <td width="100%" height="100" align="center">
+							          <img src="http://www.tricenter.es/APP/tricenter/resources/FOTOS_CON_LETRAS/TIENDA_MAIRENA.jpg" >
+							       </td>
+							    </tr>
+							  </table>
+				            </td>
+				            </tr>
+				           <tr>
+				            <td width="2%">&nbsp;</td>
+				            <td colspan="2" width="50%">
+								            	<br>
+				            </td>
+				          </tr>
+				        </table>
+			          </ion-item>
+			      	</ion-list>
+			      	
+			    </form>
+		   </ion-card-content>
+		</ion-card>
+
+      </div>
+      		
+ </div>
+
+
+
+
+
+
+
+
+
+    <ion-card  *ngFor="let rscesta of rs_cesta; let i = index;"  style="width: 100%">
+      	<div style="background-color: #fff; max-height: 40px" class="principal">
+	      	<table class="tableta" >
+	          <tr>
+	            <td rowspan="2" class="imagen_cesta">
+   	              <img style="max-width: 20px;min-width: 20px;max-height: 20px;min-height: 20px;" item-left src='{{rscesta.CESTA_IMAGEN}}'>
+	            </td>
+	            <td>
+	            	<div style="padding: 10px">
+			        		<table style="width:100%" width="100%" >
+			        			<tr>
+			        				<td style="width:100%" width="100%">
+			        					<p style="font-size: 10px"><b>Ref:</b></p>
+												<p style="color: #ff3300; font-size: 12px;margin-top: -5px">{{rscesta.CESTA_CODIGO}}</p>
+											</td>
+			        				<td valign="top">
+				        			</td>
+			        			</tr>
+			        		</table>
+			        </div>
+	             </td>
+	             <td style="width:80%" width="100%" colspan="2">
+			        		<table border=0 style="width:100%" width="100%">
+			        			<tr>
+			        				<td style="width:100%" width="100%" align="left">
+			        					<p style="font-size: 10px"><b>{{mostrar_des(rscesta.CESTA_DESNORMAL)}}</b></p>
+											</td>
+			        				<td valign="top">
+				        			</td>
+			        			</tr>
+			        		</table>
+	             </td>
+	           		<td>
+						<div style="padding: 10px">
+		
+							  <p style="font-size: 10px">Pvp:<p> 
+							  <p style="font-size: 12px;margin-top: -3px"><b>{{rscesta.CESTA_PVP_IVA}}</b></p>
+
+			        	</div>
+
+					</td>
+					<td   align="right">
+		            <div id="descripcion" style="min-width:100px;margin-top: 5px" class="row centrado">
+			      
+							<table border=0 >
+			        			<tr><td align="left" valign="top">
+									<form [formGroup]="myForm" novalidate>
+				        				<ion-input formControlName="unidades" type="number" (change)="editunicesta(rscesta)" text-right style="font-size: 14px;  color:#ff3300; font-weight:bolder;margin-top:-8px; max-width: 120px;height:30px;background-color: #fff" placeholder="uni" value="{{rscesta.CESTA_UNIDADES}}">
+				        				</ion-input>
+		        					</form>
+			        				</td>
+			        				<td valign="top">
+			        					<button ion-button id="icono" class="tamicono" (click)="quitardelacesta(rscesta)">
+        									<table><tr><td><ion-icon name="ios-trash" class="icocesta" 	right></ion-icon></td></table>
+        								</button>
+				        			</td>
+			        			</tr>
+			        		</table>
+
+			        </div> 
+	            </td>
+		      </tr>
+		    </table>
+       </div>
+
+
+  </ion-card>
+ 
+ 	<div style="width: 100%">
+		<button style="background-color:#010101;height:30px;border-radius: 10%;"  ion-button block (click)="accion5()"><ion-icon style="font-size: 30px" ios="md-card" md="md-card"></ion-icon>&nbsp;Ir al Pago</button>
+			      <ion-card *ngIf="ocultar5">
+	
+					   <ion-card-content>
+
+					       <ion-list> 
+
+								<form style="background: #fff" [formGroup]="myCupon" (ngSubmit)="obtenercupon()" novalidate>
+									  <ion-list> 
+									  	<table  width="100%" border="0">
+							            	<tr>
+							            		<td style="min-width:70%">
+							            			<ion-item>
+												      <ion-label floating>Cupón descuento</ion-label>
+												      <ion-input formControlName="txtcupon" style="background: #DDEEAB"></ion-input>
+												     </ion-item>
+							            		</td>
+							            		<td style="min-width: 30%">
+							            			<button style="width:100px;background-color: #010101; max-height: 30px;margin-top: 35px" ion-button class="sinmargen icon-left" (click)="submit">Aplicar<br>cupón	</button>
+							            		</td>
+							            	</tr>
+							            </table>
+									     
+								    </ion-list>
+								</form>
+			          
+
+			          <ion-item style="background:#ffffff; text-align: right;padding: 1"> 
+						        <table width="100%" border="0">
+					            	<tr>
+					            		<td style="min-width: 60%"><p>Suma:</p></td>
+					            		<td style="min-width: 20%"><p>{{this.valortotal}}</p></td>
+					            		<td style="min-width: 20%">EUR</td>
+					            	</tr>
+					            </table>
+			
+						        <table *ngIf="this.variablesglobales.CLIENTES_CUPON!=0" width="100%" border="0">
+					            	<tr>
+					            		<td style="min-width: 60%"><p>Cupón descuento:</p></td>
+					            		<td style="min-width: 20%"><p>-<b>{{this.variablesglobales.CLIENTES_CUPON}}</b></p></td>
+					            		<td style="min-width: 20%">EUR</td>
+					            	</tr>
+					            </table>
+					            <table width="100%" border="0">
+					            	<tr>
+					            		<td style="min-width: 60%"><p>Importe mensajería:</p></td>
+					            		<td style="min-width: 20%"><p><b>{{this.valortransporte}}</b></p></td>
+					            		<td style="min-width: 20%">EUR</td>
+					            	</tr>
+					            </table>
+					              <table width="100%" border="0">
+					            	<tr>
+					            		<td COLSPAN=3 style="min-width: 100%"><p>____________________________________</p></td>
+					            	</tr>
+					            </table>
+					             <table width="100%" border="0">
+					            	<tr>
+					            		<td style="min-width: 60%"><p>Importe total:</p></td>
+					            		<td style="min-width: 20%"><p><b>{{this.valorterminado}}</b></p></td>
+					            		<td style="min-width: 20%">EUR</td>
+					            	</tr>
+					            </table>
+					          </ion-item>
+					      	</ion-list>
+
+						<ion-card style="width: 100%">
+				      		<div style=" max-height: 100px;text-align: center" class="principal">
+					      	<table border=0 style="width:100%;background: #ffffff; max-height: 30px">
+					          	<tr>
+					            <td width="98%" align="center">
+					               <button style="width:100%;background-color: #010101; max-height: 30px" ion-button class="sinmargen icon-left" (click)="pagar()">
+					               	<table><tr><td style="color:#fffff;"><ion-icon ios="md-card" md="md-card"></ion-icon></td><td><p style="font-size: 14px;color:#ffffff">&nbsp;&nbsp;Pagar</p></td></tr></table></button>
+					    		</td>         
+					        	</tr>
+						    </table>
+
+
+				       		</div>
+				  		</ion-card>
+
+					   </ion-card-content>
+					</ion-card>
+
+			      </div>
+             	
+
+   
+</ion-content>
+<compie></compie>
+
+
+
+
+
+
+
+

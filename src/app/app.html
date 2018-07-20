@@ -1,0 +1,30 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <div class="fontnormalblanca">
+        <table>
+          <tr>
+            <td width="5%">&nbsp;</td>
+            <td width="95%"><img style="width: 60px ; height: auto ; display: block; margin: auto; border-radius: 25px; " src="http://www.tricenter.es/AppCatalogo/avatar.gif">
+              <div *ngIf="this.variablesglobales.logged == true" class = "col-1">             
+                <h4>{{this.variablesglobales.CLIENTES_RAZSOCIAL}}</h4>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div *ngIf="this.variablesglobales.logged == true" class = "col-1">
+        <button style="background-color :black; color: white;" menuClose ion-item *ngFor="let plogged of pageslogged" (click)="openPage(plogged)">{{plogged.title}}</button>
+      </div>
+      <div *ngIf="this.variablesglobales.logged != true" class = "col-1">
+        <button style="background-color :black; color: white;" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button> 
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>

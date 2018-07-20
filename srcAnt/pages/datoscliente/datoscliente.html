@@ -1,0 +1,105 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content><combuscar></combuscar>
+    <div>
+<!-- ******************  EMPIEZA CODIGO PARA NO IDENTIFICADO ********************** -->
+<!--
+     <ion-card  *ngIf="this.variablesglobales.logged == false" > 
+    <form [formGroup]="myForm" (ngSubmit)="acceso()" novalidate>
+    <ion-list> 
+      <ion-item >
+        <ion-input formControlName="email" type="text" placeholder="E-mail" ></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+        <small color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">Campo obligatorio</small>
+        <small color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">Escriba un email válido</small>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="contrasena" type="contrasena" placeholder="Contraseña" ></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="myForm.get('contrasena').errors && myForm.get('contrasena').dirty">
+        <small color="danger" ion-text *ngIf="myForm.get('contrasena').hasError('required')">Campo obligatorio</small>
+        <small color="danger" ion-text *ngIf="myForm.get('contrasena').hasError('pattern')">Use entre 6 y 18 caracteres alfanumericos</small>
+      </ion-item>
+    </ion-list>
+
+    <div><button class="formulario" ion-button block type="submit" (click)="openInicio()">Acceder</button></div>
+    </form>
+    <div><button class="formulario" ion-button block type="submit" (click)="openAltausuario()">Registrarse</button></div>
+    </ion-card>
+  -->
+<!-- ******************  HASTA AQUI EL CODIGO PARA NO IDENTIFICADO ********************** -->
+<!-- EL USUARIO YA HA ACCEDIDO Y SE LE MUESTRA MODIFICAR SUS DATOS -->
+<ion-card  *ngIf="this.variablesglobales.logged == true">
+  <form [formGroup]="myForm" (ngSubmit)="update()">
+    <ion-list> 
+      <ion-item>
+        <ion-label stacked>Nombre o Razón social:</ion-label>
+        <ion-input formControlName="razsocial" type="text" placeholder="Nombre o Razón Social" minlength="1" maxlength="50" required value="{{this.variablesglobales.CLIENTES_RAZSOCIAL}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>NIF / CIF:</ion-label>
+        <ion-input formControlName="nif" type="text" placeholder="Nif / Cif" value="{{this.variablesglobales.CLIENTES_NIF}}"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('nif').errors && myForm.get('nif').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('nif').hasError('pattern')">Escriba un NIF / CIF válido</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Teléfono fijo o Móvil:</ion-label>
+        <ion-input formControlName="telefono" type="text" placeholder="Teléfono" value="{{this.variablesglobales.CLIENTES_TELEFONO1}}"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('telefono').errors && myForm.get('telefono').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('telefono').hasError('pattern')">Escriba un teléfono válido</p>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label stacked>Dirección:</ion-label>
+        <ion-input formControlName="direccion" type="text" placeholder="Dirección" value="{{this.variablesglobales.CLIENTES_DIRECCION}}"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('direccion').errors && myForm.get('direccion').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('direccion').hasError('pattern')">Escriba una dirección válida</p>
+      </ion-item>
+
+       <ion-item>
+        <ion-label stacked>Población:</ion-label>
+        <ion-input formControlName="poblacion" type="text" placeholder="Población" value="{{this.variablesglobales.CLIENTES_POBLACION}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Provincia:</ion-label>
+        <ion-input formControlName="provincia" type="text" placeholder="Provincia" value="{{this.variablesglobales.CLIENTES_PROVINCIA}}"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label stacked>Codigo Postal:</ion-label>
+        <ion-input formControlName="cpostal" type="text" placeholder="Código Postal" value="{{this.variablesglobales.CLIENTES_CPOSTAL}}"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('cpostal').errors && myForm.get('cpostal').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('cpostal').hasError('pattern')">Escriba un código postal válido</p>
+      </ion-item>
+
+         <ion-item >
+            <ion-label floating>Dirección de entrega completa:</ion-label>
+            <ion-input formControlName="direccionentrega" type="text" value="{{this.variablesglobales.CLIENTES_DIRECCION_ENTREGA}}"></ion-input>
+          </ion-item>
+       <ion-item >
+          <ion-label floating>Contraseña del usuario:</ion-label>
+          <ion-input type="password" formControlName="contrasena" type="text" value="{{this.variablesglobales.CLIENTES_CONTRASENA}}"></ion-input>
+        </ion-item>
+
+
+    </ion-list>
+    <div>
+      <br><button class="formulario" ion-button block type="submit" >Guardar datos</button>
+      <br>
+    </div>
+    <!--<div><button class="formulario" ion-button block type="submit" [disabled]="!myForm.valid">Guardar datos</button></div>-->
+  </form>
+    </ion-card>
+</div>    
+ </ion-content>
+<compie></compie>

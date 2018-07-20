@@ -1,0 +1,35 @@
+page-buscar {
+
+
+	.fontnormalblanca{
+	  	padding:0;
+		margin-top:0px;
+		margin-bottom:0;
+		color:#fff;
+		font-size:0.85em;
+		background-color:#000000;
+	}
+
+	
+	.fontmuygrande{
+		font-size:1.25em;
+		color:#fff;
+		-webkit-border-radius: 3px 12px;  /* Safari  */
+		-moz-border-radius: 3px 12px;     /* Firefox */
+	}
+
+	.fontprecio{
+		font-size:1.25em;
+		color:#fff;
+		width: 150px;
+		margin-left: 10px;
+		margin-right:10px;
+		text-align: center;
+		background-color: #FF4000;
+		-webkit-border-radius: 3px 12px;  /* Safari  */
+		-moz-border-radius: 3px 12px;     /* Firefox */
+	}
+
+	.noline { border-bottom-color: transparent !important; box-shadow: none !important; }
+	
+}

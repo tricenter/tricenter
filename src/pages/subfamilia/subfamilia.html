@@ -1,0 +1,21 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content><combuscar></combuscar>
+    <div style="margin-left:5px; margin-right:10px">
+      <ion-card style="min-height:45px" *ngFor="let artsubtema of artsubtemas; let i = index;" >
+      <ion-item class="fondoblanco este" (click)="openPage(artsubtema)">
+        <ion-avatar item-start>
+        <table border="0"><tr>
+           <td><img class="sinmargenimg" src='{{this.imagentemaactivo}}' alt="" ></td>
+            <td><ion-icon style="font-size: 30px" name="arrow-dropright"></ion-icon></td>
+          <td><img class="sinmargenimg" src='{{artsubtema.ARTICULOS_IMAGEN}}' alt="" ></td>
+          <td>&nbsp;</td><td>&nbsp;</td>
+          <td><p class="topnegativo fontgrande">{{artsubtema.ARTICULOS_SUBTEMA}}</p></td>
+          <!--<td><h6 item-end>{{artsubtema.ARTICULOS_COUNT}}</h6></td>-->
+        </tr></table>
+        </ion-avatar>
+      </ion-item>
+    </ion-card>
+  </div>
+  </ion-content>
+<compie></compie>

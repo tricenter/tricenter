@@ -1,0 +1,31 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content><combuscar></combuscar>
+  <!--
+  <ion-title>
+      <table><tr><td><p class="textonav" (click)="abrelaPage('tema')">{{this.variablesglobales.gettema()}}</p></td>
+      <td><p class="textonav" (click)="abrelaPage('subtema')"><ion-icon name="arrow-round-forward"></ion-icon>&nbsp;{{this.variablesglobales.getlisart()}}</p></td></tr></table>
+  </ion-title>
+ -->
+  <ion-card *ngFor="let datos of datoscargados; let i = index;" >
+     <form [formGroup]="myForm" novalidate>
+      <ion-list> 
+        <table border="0" width="100%"  height="100%">
+          <tr (click)="openArticulo(datos.ARTICULOS_REFERENCIA_PROVEEDOR)">
+            <td align="center" width="35%">
+              <img item-left padding-0 src='{{datos.ARTICULOS_IMAGEN_GRANDE}}' ><h4><b>Ref: {{datos.ARTICULOS_REFERENCIA_PROVEEDOR}}</b></h4>
+            </td>
+            <td width="5%">&nbsp;</td>
+            <td align="left" width="60%">
+              <p class="fontnormal"><b>{{datos.ARTICULOS_DESNORMAL}}</b></p>
+              <!--<ion-item align="left" class="noline"><ion-input formControlName="codigo" type="hidden" maxlength="0"></ion-input></ion-item>-->
+        <!--    <ion-input formControlName="codigo" type="hidden" maxlength="0"></ion-input>-->
+              <p class="fontprecio">PVP:&nbsp;&nbsp;{{datos.ARTICULOS_PVP_IVA}} €</p>  
+            </td>
+          </tr>
+        </table>
+      </ion-list>
+    </form>   
+  </ion-card>
+</ion-content>
+<compie></compie>

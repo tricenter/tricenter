@@ -1,0 +1,52 @@
+page-tiendas {
+
+
+	.fontmuygrande{
+		font-size:1.25em;
+		color:#fff;
+		background-color:#000000;
+		-webkit-border-radius: 3px 12px;  /* Safari  */
+		-moz-border-radius: 3px 12px;     /* Firefox */
+	}
+
+	.fontmenu{
+		font-size:1.25em;
+		color:#fff;
+		background-color:#cccccc;
+		-webkit-border-radius: 3px 12px;  /* Safari  */
+		-moz-border-radius: 3px 12px;     /* Firefox */
+	}
+
+	.fontnormalblanca{
+	  	padding:0;
+		margin-top:0px;
+		margin-bottom:0;
+		color:#fff;
+		font-size:0.85em;
+		background-color:#000000;
+	}
+
+
+	.textoimagen{
+		position: relative;top: -100px;
+		text-align: center;
+		vertical-align: top;
+		color:#fff;
+		font-size:1.5em;
+		z-index: 2;
+	}
+
+
+	.slick-slide {
+	    opacity: 0.6;
+	}
+
+	.slick-current {
+	    opacity: 1 !important;
+	}
+	
+	.slick-dots li button:before  {
+	    font-size: 10px !important;
+	}
+
+}

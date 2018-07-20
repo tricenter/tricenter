@@ -1,0 +1,85 @@
+page-lista {
+	.scroll-content{
+
+		padding-left:0;
+		padding-top:0;
+		padding-right:0;
+		padding-bottom:0;
+		margin-top:94px;
+		margin-bottom:60px;
+		margin-left:-20px;
+		margin-right:0px;
+		background-color:#333;
+
+	}	
+
+	.fontnormalblanca{
+	  	padding:0;
+		margin-top:0px;
+		margin-bottom:0;
+		color:#fff;
+		font-size:0.85em;
+		background-color:#000000;
+	}
+
+	.logo{
+		margin-top: 10px;
+		min-width: 120px;
+		min-height: 35px;
+
+	}
+
+	.fontmuygrande{
+		font-size:1.25em;
+		color:#fff;
+		-webkit-border-radius: 3px 12px;  /* Safari  */
+		-moz-border-radius: 3px 12px;     /* Firefox */
+	}
+
+	.derecha{
+		text-align: right;
+	}
+
+	.fontprecio{
+		font-size:1.25em;
+		color:#fff;
+		width: 150px;
+		margin-left: 10px;
+		margin-right:10px;
+		text-align: center;
+		background-color: #FF4000;
+		-webkit-border-radius: 3px 12px;  /* Safari  */
+		-moz-border-radius: 3px 12px;     /* Firefox */
+	}
+
+	.noline { border-bottom-color: transparent !important; box-shadow: none !important; }
+	
+/*
+	.unidadescesta{
+		position: absolute; 
+  	right: 19px; 
+ 	 	top: -6px; 
+ 	 	width: 0px; 
+ 	 	height: 0px; 
+		font-weight: bold;
+		font-size:0.35em;
+		color:#FF4000;
+		text-align: center;
+		background-color: #fff;
+	}
+
+	.cestacarrito2{
+		position: absolute; 
+  	right: 8px; 
+  	top: 55px; 
+		padding:0;
+		margin-top:0px;
+		margin-bottom:0;
+		color:#fff;
+		font-size:2.2em;
+		background-color:#000000;
+	}
+*/
+
+}
+

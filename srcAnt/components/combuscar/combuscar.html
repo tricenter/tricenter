@@ -1,0 +1,38 @@
+<!--
+<div *ngIf="this.variablesglobales.lupa == true">
+  <table border=2 width="100%">
+    <tr>
+      <td>
+        <ion-toolbar class="fontnormal">
+          <p class="fontnormalblanca"> Ordenar por: Orden Alfabetico | Precio | Etc</p>
+        </ion-toolbar>
+        <ion-item >
+          <ion-range dualKnobs="true" pin="true" [(ngModel)]="structure" (ionChange)="onChange($event)" color="dark" range-md-padding-vertical="4px" range-md-slider-height="10px">
+            <ion-label range-left>0</ion-label>
+            <ion-label range-right>100</ion-label>
+          </ion-range>
+        </ion-item>
+        <form #form="ngForm"  novalidate>
+          <ion-toolbar class="fontnormal">
+            <p class="fontnormalblanca">Precio</p>
+          </ion-toolbar>
+          <ion-badge item-end color="dark">{{structure.lower}}</ion-badge>
+          <ion-badge item-end color="dark">{{structure.upper}}</ion-badge>
+          <ion-searchbar type="text" required [(ngModel)]="formulario.valor" animated="true"  name="txtbuscar" ngControl="valor" autocorrect="on" placeholder="Buscar ..."></ion-searchbar>
+          <button class="formulario" ion-button block type="submit" (click)="openBuscar2()">Buscar</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+</div>
+-->
+<div *ngIf="this.variablesglobales.lupa == true">
+  <form #form="ngForm" (ngSubmit)="openBuscar2()" novalidate>
+    <ion-searchbar type="text" required [(ngModel)]="formulario.valor" animated="true"  name="txtbuscar" ngControl="valor" autocorrect="on" placeholder="Buscar ..."></ion-searchbar>
+  </form>
+</div>
+<!--
+<div *ngIf="this.formulario.valor == ''">
+    <p class="fontnormalblanca">ESTAMOS EN LA PAGINA DE LOS RESULTADOS</p>
+</div>
+-->

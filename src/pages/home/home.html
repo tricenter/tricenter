@@ -1,0 +1,188 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content><combuscar></combuscar>
+<!--
+	<ion-slides loop="true" effect="slide" zoom="true" centeredSlides="true" pager="true" autoplay="2000" speed="2000" style="background-color: black">
+	  <ion-slide *ngFor="let image of [1,2,3,4,5]">
+	    <img data-src="./assets/imgs/slide{{image}}.jpeg">
+	  </ion-slide>
+	</ion-slides>
+
+  <ion-card *ngFor="let i of items">
+      <ion-list> 
+        <table border="0" width="100%"  height="100%">
+          <tr (click)="openArticulo(i.ARTICULOS_REFERENCIA_PROVEEDOR)">
+            <td align="center" width="35%">
+              <img item-left style="padding: 10px" src='{{i.ARTICULOS_IMAGEN_GRANDE}}' ><h4><b>Ref: {{i.ARTICULOS_REFERENCIA_PROVEEDOR}}</b></h4>
+            </td>
+            <td width="5%">&nbsp;</td>
+            <td align="left" width="60%">
+              <p class="fontnormal"><b>{{i.ARTICULOS_DESNORMAL}}</b></p>
+              <p class="fontprecio">PVP:&nbsp;&nbsp;{{i.ARTICULOS_PVP_IVA}} €</p>  
+            </td>
+          </tr>
+        </table>
+      </ion-list>
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="¡Más ofertas!">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  -->
+<!-- 
+  <ion-slides loop="true" effect="slide" zoom="true" centeredSlides="true" pager="true" autoplay="2000" speed="2000" style="background-color: black">
+	  <ion-slide *ngFor="let image of [1,2,3,4,5]">
+	    <img data-src="./assets/imgs/slide{{image}}.jpeg">
+	  </ion-slide>
+	</ion-slides>
+
+  <ion-card *ngFor="let i of items">
+    <table border="0" width="100%"  height="100%">
+      <tr (click)="openArticulo(i.ARTICULOS_REFERENCIA_PROVEEDOR)">
+        <td align="center" width="35%">
+          <img item-left style="padding: 10px" src='{{i.ARTICULOS_IMAGEN_GRANDE}}' ><h4><b>Ref: {{i.ARTICULOS_REFERENCIA_PROVEEDOR}}</b></h4>
+        </td>
+        <td width="5%">&nbsp;</td>
+        <td align="left" width="60%">
+          <p class="fontnormal"><b>{{i.ARTICULOS_DESNORMAL}}</b></p>
+          <p class="fontprecio">PVP:&nbsp;&nbsp;{{i.ARTICULOS_PVP_IVA}} €</p>  
+        </td>
+      </tr>
+    </table>
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="¡Más ofertas!">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+-->
+
+<div class = "row"  style="margin-left: 15px;  text-align: center">
+
+      <div style="margin:2%;height:30px;width: 46%" >
+        <button class="botonhome1"  ion-button block (click)="accion1()">
+          <table class="noborde" border="0">
+            <tr>
+              <td><ion-icon style="font-size: 22px" ios="ios-basket" md="md-basket"></ion-icon></td>
+            </tr>
+            <tr>
+              <td style="margin-bottom: 10px">&nbsp;&nbsp;LOS + VENDIDOS</td>
+            </tr>
+          </table>
+          </button>
+      </div>
+      <div style="margin:2%;height:30px;width: 46%" >
+        <button class="botonhome3" ion-button block (click)="accion2()">
+            <table class="noborde" border="0">
+            <tr>
+              <td><ion-icon style="font-size: 22px" ios="ios-bulb" md="md-bulb"></ion-icon></td>
+            </tr>
+            <tr>
+              <td style="margin-bottom: 10px">&nbsp;Nuestras Ofertas</td>
+            </tr>
+          </table>
+        </button>
+      </div>
+
+    <div style="width: 100%">
+      <ion-card style="background: #feff66" *ngIf="ocultar1">
+        <ion-card *ngFor="let i of items">
+        <table  bgcolor="" border="1" width="100%"  height="100%"><tr><td>
+        <table border="0" width="100%"  height="100%">
+          <tr (click)="openArticulo(i.ARTICULOS_REFERENCIA_PROVEEDOR)">
+            <td align="center" width="35%">
+              <img item-left style="padding: 10px" src='{{i.ARTICULOS_IMAGEN_GRANDE}}' ><h4><b>Ref: {{i.ARTICULOS_REFERENCIA_PROVEEDOR}}</b></h4>
+            </td>
+            <td width="5%">&nbsp;</td>
+            <td align="left" width="60%">
+              <p class="fontnormal"><b>{{i.ARTICULOS_DESNORMAL}}</b></p>
+              <p class="fontprecio"><b>PVP:&nbsp;&nbsp;{{i.ARTICULOS_PVP_IVA}} €</b></p>  
+            </td>
+          </tr>
+        </table>
+      </td></tr></table>
+      </ion-card>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="¡Más ofertas!">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+
+   
+    </ion-card>
+
+  </div>
+
+
+    <div style="width: 100%">
+      <ion-card style="background: #fe6532" *ngIf="ocultar2">
+        <ion-card *ngFor="let i of items">
+        <table  bgcolor="" border="1" width="100%"  height="100%"><tr><td>
+         <table  bgcolor="" border="0" width="100%"  height="100%">
+          <tr (click)="openArticulo(i.ARTICULOS_REFERENCIA_PROVEEDOR)">
+            <td align="center" width="35%">
+              <img item-left style="padding: 10px" src='{{i.ARTICULOS_IMAGEN_GRANDE}}' ><h4><b>Ref: {{i.ARTICULOS_REFERENCIA_PROVEEDOR}}</b></h4>
+            </td>
+            <td width="5%">&nbsp;</td>
+            <td align="left" width="60%">
+              <p class="fontnormal"><b>{{i.ARTICULOS_DESNORMAL}}</b></p>
+              <p class="fontprecio"><b>PVP:&nbsp;&nbsp;{{i.ARTICULOS_PVP_IVA}} €</b></p>  
+            </td>
+          </tr>
+        </table>
+      </td></tr></table>
+      </ion-card>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="¡Más ofertas!">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+      </ion-card>
+
+      </div>
+</div>
+
+<!--
+
+<table bgcolor="000000" border="1" width="100%" height="100%">
+	<tr>
+		<td width="10" valign="top">&nbsp;</td>
+		<td width="100" valign="top">
+      <button ion-button class="botonhome1">Ofertas</button><br><br>
+  		<button ion-button class="botonhome2">Mis Pedidos</button><br><br>
+  		<button ion-button class="botonhome3">Guia de la APP</button><br><br>
+
+		</td>
+		<td width="100%">
+		  <ion-card *ngFor="let i of items">
+		    <table border="0" width="100%"  height="100%">
+		      <tr (click)="openArticulo(i.ARTICULOS_REFERENCIA_PROVEEDOR)">
+		        <td align="center" width="35%">
+		          <img item-left style="padding: 10px" src='{{i.ARTICULOS_IMAGEN_GRANDE}}' ><h4><b>Ref: {{i.ARTICULOS_REFERENCIA_PROVEEDOR}}</b></h4>
+		        </td>
+		        <td width="5%">&nbsp;</td>
+		        <td align="left" width="60%">
+		          <p class="fontnormal"><b>{{i.ARTICULOS_DESNORMAL}}</b></p>
+		          <p class="fontprecio">PVP:&nbsp;&nbsp;{{i.ARTICULOS_PVP_IVA}} €</p>  
+		        </td>
+		      </tr>
+		    </table>
+		  </ion-card>
+		  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+		    <ion-infinite-scroll-content
+		      loadingSpinner="bubbles"
+		      loadingText="¡Más ofertas!">
+		    </ion-infinite-scroll-content>
+		  </ion-infinite-scroll>
+		</td>
+	</tr>
+</table>
+
+-->
+</ion-content>
+<compie></compie>

@@ -1,0 +1,34 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content><combuscar></combuscar>
+    <div>
+    <form [formGroup]="myForm" (ngSubmit)="acceso()" novalidate>
+	  <ion-list> 
+  	    <ion-item >
+      <ion-label floating>Email</ion-label>
+      <ion-input [formControl]="myForm.controls['email']"
+          type="email" ></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+        <small color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">Campo obligatorio</small>
+        <small color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">Escriba un email válido</small>
+      </ion-item>
+      
+        <ion-item >
+      <ion-label floating>Contraseña</ion-label>
+      <ion-input [formControl]="myForm.controls['contrasena']"
+          type="password" ></ion-input>
+      </ion-item>
+       <ion-item *ngIf="myForm.get('contrasena').errors && myForm.get('contrasena').dirty">
+        <small color="danger" ion-text *ngIf="myForm.get('contrasena').hasError('required')">Campo obligatorio</small>
+        <small color="danger" ion-text *ngIf="myForm.get('contrasena').hasError('pattern')">Use entre 6 y 18 caracteres alfanumericos</small>
+      </ion-item>
+      <strong><p id="demo"></p></strong>
+	  </ion-list>
+    <div><button class="formulario" ion-button block type="submit" (click)="openInicio()">Acceder</button></div>
+    </form>
+    <div><button class="formulario" ion-button block type="submit" (click)="openAltausuario()">Registrarse</button></div>
+  </div>
+
+ </ion-content>
+<compie></compie>

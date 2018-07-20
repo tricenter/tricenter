@@ -1,0 +1,16 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content><combuscar></combuscar>
+      <ion-card *ngFor="let arttema of arttemas; let i = index;" >
+	  		<ion-item class="fondoblanco este" (click)="openPage(arttema)">
+			    <ion-avatar item-start>
+          <table border="0"><tr>
+            <td><img class="sinmargenimg" src='{{arttema.ARTICULOS_IMAGEN}}' alt="" ></td>
+            <td>&nbsp;</td><td>&nbsp;</td>
+            <td><p class="topnegativo fontgrande">{{arttema.ARTICULOS_TEMA}}</p></td>
+          </tr></table>
+          </ion-avatar>
+        </ion-item>
+  		</ion-card>
+    </ion-content>
+<compie></compie>

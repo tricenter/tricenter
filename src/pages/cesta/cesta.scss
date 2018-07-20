@@ -1,0 +1,99 @@
+page-cesta {
+
+.scroll-content{
+
+		padding-left:0;
+		padding-top:0;
+		padding-right:0;
+		padding-bottom:0;
+		margin-top:94px;
+		margin-bottom:43px;
+		margin-left:-20px;
+		margin-right:0px;
+		background-color:#333;
+
+	}	
+
+ .botones {
+    border: none;
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#descripcion{
+	height:100%;
+	width:100%;
+}
+
+
+.sube{
+	margin-top:-5px;
+
+}
+.tableta{
+	margin-top:-8px;
+	border:1;
+	border-color:#ff3300;
+	text-align:center;
+	height:50px;
+	width:100%;
+	padding:3;
+
+}
+
+.masymenos{
+	   color: #ff3300;
+		background-color: #000;
+		height:25px;
+		width:20px;
+		border-radius: 15%;
+
+
+}
+
+.tamicono {
+		color: #000;
+		background-color: #fff;
+		height:20px;
+		width:20px;
+		border-radius: 15%;
+
+
+	}
+
+#icono:hover {
+  background-color: #ff3300;
+}
+
+.imagen-cesta{
+	max-height: 30px;
+	min-height: 30px;
+	max-width: 30px;
+	min-width: 30px;
+}
+.icocesta{
+	font-size: 24px;
+	max-height: 10px;
+}
+
+.textoicono{
+	color: #fff;
+	font-size: 8px
+}
+
+.principal{
+	margin:6px;
+  	text-align: left;
+  	vertical-align: top;
+}
+.centrado{
+  	text-align: left;
+}
+
+
+}

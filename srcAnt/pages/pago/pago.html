@@ -1,0 +1,33 @@
+
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content padding><combuscar></combuscar>
+	<form name="paymentForm" novalidate>
+		<ion-item>
+			<ion-label floating>Precio</ion-label>
+			<ion-input type="text" name="amount" [(ngModel)]="payment.amount"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Moneda</ion-label>
+			<ion-select [(ngModel)]="payment.currency" name="currency">
+				<ion-option value="{{currency}}" *ngFor="let currency of currencies">{{currency}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Descripción</ion-label>
+			<ion-input type="text" name="description" [(ngModel)]="payment.shortDescription"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Intent</ion-label>
+			<ion-input type="text" name="intent" [(ngModel)]="payment.intent"></ion-input>
+		</ion-item>
+		<p>
+			<button ion-button block color="secondary" (click)="pagar()">PagaRRr</button>
+		</p>
+</form>
+<p class="fontnormalblanca" >{{this.dataPaypal}}</p>
+<!--
+
+-->
+</ion-content>
+<compie></compie>

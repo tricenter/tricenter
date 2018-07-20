@@ -1,0 +1,28 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content><combuscar></combuscar>
+<!--
+<div *ngIf="this.variablesglobales.lupa == true">
+-->
+  <form #form="ngForm"  novalidate>
+  	<ion-searchbar type="text" required [(ngModel)]="formulario.valor" animated="true"  name="txtbuscar" ngControl="valor" autocorrect="on" placeholder="Buscar ..."></ion-searchbar>
+<!-- 
+    <ion-toolbar><p class="fontnormalblanca"><b>&nbsp;Ordenar: Alfabeticamente | Precio | Más vendidos</b></p></ion-toolbar>
+-->
+    <ion-item >
+      <ion-range dualKnobs="true" pin="true" [(ngModel)]="structure" (ionChange)="onChange($event)" color="dark" step="5" [ngModelOptions]="{standalone: true}" max="1000px">
+        <ion-label range-left>0</ion-label>
+        <ion-label range-right>1000</ion-label>
+      </ion-range>
+    </ion-item>
+    <p class="fontnormalblanca">&nbsp;<b>Buscar articulos entre&nbsp;</b><ion-badge item-end color="dark">{{structure.lower}}<b>€</b>
+    </ion-badge>Y&nbsp;<ion-badge item-end color="dark">{{structure.upper}}<b>€</b></ion-badge></p>
+    <br>
+    <button ion-button round outline class="formulario" style="background-color: rgba(100,200,150,1);width: 90%; margin-left: 5%" ion-button block type="submit" (click)="openBuscar2()">Buscar</button>
+  </form>
+  <!--
+</div>
+-->
+ </ion-content>
+<compie></compie>
+

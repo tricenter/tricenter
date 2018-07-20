@@ -1,0 +1,159 @@
+<ion-header>
+   <ion-toolbar  style="height:50px">
+      <button id="caba" style="width:'50px'; font-size: 35px" ion-button menuToggle left>
+        <ion-icon class="ion-button" style="font-size: 35px" name="menu"></ion-icon>
+      </button>
+      <ion-buttons id="cabb" style="min-width:100; font-size: 40px"  left>
+        <img class="logo" style="min-width:100" width="100" src="http://www.tricenter.es/APP/tricenter/resources/logo3.png">
+      </ion-buttons>
+      <ion-buttons  style="width:100%" id="cabc" left>
+        <form  id="cabcc" width="100%" #form="ngForm" (ngSubmit)="openBuscar2()" novalidate>
+          <ion-searchbar  type="text" required [(ngModel)]="formulario.valor" animated="true"  name="txtbuscar" ngControl="valor" autocorrect="on" placeholder="Buscar ..."></ion-searchbar>
+        </form>
+      </ion-buttons>
+      <ion-buttons id="cabd" end>
+        <table width="100%" border="0" *ngIf="this.variablesglobales.logged == true" style="height:20px;margin-top:10px;" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="50%">
+              <!--<p style="color:#Ffffff;"><button class="fontnormalblanca" (click)="openDatoscliente()"><strong>&nbsp;{{this.variablesglobales.getusername()}}</strong></button></p>-->
+              <p style="color:#Ffffff;"><button class="fontnormalblanca" (click)="openDatoscliente()"><strong>&nbsp;{{this.variablesglobales.CLIENTES_RAZSOCIAL}}</strong></button></p>
+            </td>
+            <td width="30%">&nbsp;</td>
+            <td width="10%">
+              <div *ngIf="this.variablesglobales.logged == true" class = "col-1">
+                <button ion-button class="fontnormalblanca sinmargen icon-left" (click)="this.servicios.cerrarsesion()"><table><tr><td><ion-icon ios="ios-exit" md="md-exit"></ion-icon></td></tr>
+                <tr><td><p class="fontnormalblanca textoicono"><!--Salir--></p></td></tr></table></button>
+              </div> 
+            </td>
+          </tr>
+        </table>
+      </ion-buttons>
+    </ion-toolbar>
+  <ion-navbar hideBackButton left>
+    <div class = "row">
+      <div class = "col-1">
+        <button ion-button class="sinmargen" (click)="openInicio()"><table><tr><td><ion-icon ios="ios-home" md="md-home"></ion-icon></td></tr><tr><td><p class="textoicono"> Inicio </p></td></tr></table></button>
+      </div>
+      <div class = "col-1">
+        <button ion-button class="sinmargen icon-left" (click)="openCatalogo()"><table><tr><td><ion-icon ios="ios-list-box" md="md-list-box"></ion-icon></td></tr><tr><td><p class="textoicono">Catálogo</p></td></tr></table></button>
+      </div>    
+      <div class = "col-1">
+        <button ion-button class="sinmargen icon-left" (click)="openFiltro()"><table><tr><td><ion-icon ios="ios-search" md="md-search"></ion-icon></td></tr><tr><td><p class="textoicono">Buscar</p></td></tr></table></button>
+      </div>
+      <div class = "col-1">
+        <button ion-button class="sinmargen icon-left" (click)="openTiendas()"><table><tr><td><ion-icon ios="ios-contacts" md="md-contacts"></ion-icon></td></tr><tr><td><p class="textoicono">Tiendas</p></td></tr></table></button>
+      </div> 
+      <div class = "col-1">
+        <button ion-button class="sinmargen icon-left" (click)="scan()"><table><tr><td><ion-icon ios="ios-qr-scanner" md="md-qr-scanner"></ion-icon></td></tr><tr><td><p class="textoicono">Escanear</p></td></tr></table></button>
+      </div>
+      <div class = "col-1">
+        <table  class="sinmargen icon-left" ><tr><td></td></tr></table>
+      </div> 
+      <!--
+        <form id="botonbuscar" #form="ngForm" (ngSubmit)="openBuscar2()" novalidate>
+          <div  class = "col-1">
+            <button  ion-button type="submit" class="sinmargen icon-left" (click)="abreBusqueda()">
+              <table>
+                <tr>
+                  <td><ion-icon ios="ios-search" md="md-search"></ion-icon></td>
+                </tr>
+                <tr>
+                  <td><p class="textoicono">Buscar</p></td>
+                </tr>
+              </table>
+            </button>
+          </div>
+        </form>
+      -->
+    </div>
+    <ion-buttons end>
+     <button ion-button class="cestacarrito"  (click)="openCesta()" >
+         <ion-icon [@cartBadge]="cartBadgeState" name="cart">
+          <p class="unidadescesta" *ngIf="this.variablesglobales.logged == true">{{this.variablesglobales.getValorcesta()}}</p>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <!--
+      <ion-buttons end>
+       <button ion-button class="cestacarrito"  (click)="openCesta()" >
+           <ion-icon ios="ios-cart" md="md-cart">
+            <p class="unidadescesta" *ngIf="this.variablesglobales.logged == true">{{this.variablesglobales.getValorcesta()}}</p>
+          </ion-icon>
+        </button>
+      </ion-buttons>
+    -->
+  </ion-navbar>
+</ion-header>
+<!--
+<ion-buttons end>
+ <button ion-button class="cestacarrito2"  (click)="openCesta()" >
+     <ion-icon [@cartBadge]="cartBadgeState" name="cart">
+      <p class="unidadescesta" *ngIf="this.variablesglobales.logged == true">{{this.variablesglobales.getValorcesta()}}</p>
+    </ion-icon>
+  </button>
+</ion-buttons>
+-->
+<ion-content><combuscar></combuscar>
+  <ion-card  *ngIf="datoscargados == ''" >
+    <ion-toolbar class="fontnormalblanca">
+      <p class="fontnormalblanca" >&nbsp;Lo sentimos, el artículo que busca no existe en nuestro almacen</p>
+    </ion-toolbar>
+  </ion-card>
+  <ion-card *ngFor="let datos of datoscargados; let i = index;"  style="width: 100%" >
+  	<form [formGroup]="myForm" (ngSubmit)="cesta(datos.ARTICULOS_REFERENCIA_PROVEEDOR)" novalidate>
+      <ion-list> 
+        <table style="margin-left:5px;margin-right:14px;margin-bottom: 5px; margin-top:5px" border="1">
+          <tr>
+            <td>
+              <p class="fontnormal"><b>Ref: {{datos.ARTICULOS_REFERENCIA_PROVEEDOR}}</b></p>
+              <p class="fontnormal">{{datos.ARTICULOS_DESNORMAL}}</p>
+            </td>
+          </tr>
+ 
+          <tr>
+            <td>
+              <img item-left src='{{datos.ARTICULOS_IMAGEN_GRANDE}}' >
+              <p  style="max-width:350px;min-height:15px" class="fontprecio">PVP:&nbsp;&nbsp;{{datos.ARTICULOS_PVP_IVA}} €</p>
+             </td>
+           </tr>
+          <tr>
+            <td>
+
+          <ion-card *ngFor="let item of items">
+               
+              <div style="width: 100%" class="row">
+
+                <div style="min-width: 30px;background: #ccc" class="col-1">
+                      <ion-label>Unid </ion-label>
+                </div>
+                <div class="col-1" style="width: 30%">
+                      <ion-input text-right class="fontgrande" style="width:80px" formControlName="unidades" type="number" [value]="1"  >
+                          <button *ngIf="item.quantityInCart" [@addButton]="item.addButtonState" (@addButton.done)="addToCartFinished(item)" color="light" ion-button>
+                           {{item.quantityInCart}}  
+                          </button>
+                      </ion-input>
+                </div>
+                <div class="col-1" style="width: 50%;margin-left: 5px">
+                       <button  ion-button block type="submit" style="width: 100%" (click)="addToCart(item)"><p class="fontcesta">Añadir a la cesta</p></button>
+                </div>
+              </div>
+
+              </ion-card>
+             </td>
+           </tr>
+
+           <tr>
+            <td>
+               <p style="font-size: 0.7em">Mas información ...</p>             
+
+               <p style="font-size: 0.85em">&nbsp;{{datos.ARTICULOS_EXPLICACION}}</p>             
+        
+            </td>
+          </tr>
+        </table>
+      
+     </ion-list>
+    </form> 
+  </ion-card>
+</ion-content>
+<compie></compie>

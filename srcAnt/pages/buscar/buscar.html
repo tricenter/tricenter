@@ -1,0 +1,35 @@
+<comcabecera></comcabecera>
+<comcesta></comcesta>
+<ion-content><combuscar></combuscar>
+  <ion-card  *ngIf="datoscargados == ''" >
+   <ion-toolbar class="fontnormalblanca">
+     <p class="fontnormalblanca" >&nbsp;Lo sentimos, el articulo que busca no existe en nuestro almacen</p>
+   </ion-toolbar>
+  </ion-card>
+  <ion-card *ngFor="let i of items">
+    <form [formGroup]="myForm" (ngSubmit)="openLista()" novalidate>
+      <ion-list> 
+        <table border="0" width="100%"  height="100%">
+          <tr (click)="openArticulo(i.ARTICULOS_REFERENCIA_PROVEEDOR)">
+            <td align="center" width="35%">
+              <img item-left style="padding: 10px" src='{{i.ARTICULOS_IMAGEN_GRANDE}}' ><h4><b>Ref: {{i.ARTICULOS_REFERENCIA_PROVEEDOR}}</b></h4>
+            </td>
+            <td width="5%">&nbsp;</td>
+            <td align="left" width="60%">
+              <p class="fontnormal"><b>{{i.ARTICULOS_DESNORMAL}}</b></p>
+                <ion-input formControlName="codigo" type="hidden" maxlength="0"></ion-input>
+              <p class="fontprecio">PVP:&nbsp;&nbsp;{{i.ARTICULOS_PVP_IVA}} €</p>  
+            </td>
+          </tr>
+        </table>
+      </ion-list>
+    </form>   
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Cargando más resultados...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+<compie></compie>
